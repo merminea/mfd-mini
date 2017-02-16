@@ -1,0 +1,77 @@
+<div class="header-img">
+    <hr class="small">
+    <main>
+  
+  <div><h2>
+     NO SHOES.<br>
+     JUST CAKES.</h2>
+  <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </h3>    
+  <div class="shop-button">Hello</div>
+     </div>
+  
+</main>
+</div>
+
+
+<div class="maincontainer">
+
+    <ul class="flex-container">
+    <li class="item-description">
+        <img class="img" src="app/assets/images/img3.jpg" alt="heart" width="100%">
+        <h1>Cakes are the best!</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+        </li>
+    <li class="item-description">
+        <img class="img" src="app/assets/images/img3.jpg" alt="heart" width="100%">
+        <h1>Cakes are the best!</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+        </li>
+    <li class="item-description">
+        <img class="img" src="app/assets/images/img3.jpg" alt="heart" width="100%">
+        <h1>Cakes are the best!</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+        </li>
+    </ul>
+
+
+    <ul class="popular-products-flex">
+    <li class="popular-title"><hr></li>
+    <li class="popular-title"><h1>Popular products</h1></li>
+    <li class="popular-title"><hr></li>
+    </ul>
+
+</div>
+
+
+
+<div class="maincontainer">
+    
+    
+                <ul class="flex-container">
+                    <div class="recipe" *ngFor="let recipe of recipes" [class.featured]="recipe.isfeatured">
+                        <li class="flex-product">
+                            
+                                <star-rating [rating]="recipe.starrating" (ratingClicked)="onRatingClicked($event)"></star-rating>
+                                <img [src]="recipe.image" alt="This image shows {{recipe.name}}" width="270px">
+                                <hr>
+
+                                <div class="flex-product-text-container">
+                                    <h4>{{recipe.name | uppercase}}</h4>
+                                    <p>{{recipe.type | uppercase}}</p>
+                                    <h5>{{recipe.description}}</h5>
+                                    <hr>
+                                </div>
+                                
+                            <ul class="flex-product-icons">
+                            <li class="popular-title">{{recipe.cost | currency:'DKK':true}}</li>
+                            <li class="popular-title"> <img class="img" src="app/assets/images/heart.svg" alt="heart" height="15px">
+                            <img class="img" src="app/assets/images/plus.svg" alt="plus" height="15px">
+                            </li>
+                            </ul>
+                        <div class="buy-now-button"><a [routerLink]="['/recipe', recipe.id]">View recipe details</a></div>
+                        </li>
+                    </div>
+                </ul>
+    
+
+</div>

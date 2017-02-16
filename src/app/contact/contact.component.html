@@ -1,0 +1,66 @@
+<div class="detail-maincontainer">
+
+    <h1>Contact us to get the best cakes!</h1>
+
+    <div [hidden]="hasBeenSubmitted">
+        <form (ngSubmit)="register(ngForm, $event)" #newsletterForm="ngForm" novalidate>
+
+            <div>
+                    <label for="contactname">Name:</label>
+                    <input type="text" id="contactname" name="contactname" [(ngModel)]="model.contactname" required>
+            </div>
+
+            <div>
+                    <label for="contactemail">Email:</label>
+                    <input type="text" id="contactemail" name="contactemail" [(ngModel)]="model.contactemail" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$">
+            </div>
+
+            <div>
+                    <label for="contactemail">Message:</label><br>
+                    <input type="text" class="message" id="contactmessage" name="contactmessage" [(ngModel)]="model.contactmessage" required>
+            </div>
+
+            <button type="submit">Send message</button>
+
+            <span>Your name is {{model.contactname}}, and your email is {{model.contactemail}}</span>
+        </form>
+    </div>
+
+    <div [hidden]="!hasBeenSubmitted">You have submitted! Thank you {{model.contactname}}, we will get you the BEST cakes!</div>
+
+</div>
+
+
+<!--
+    <div class="detail-maincontainer">
+
+    <h1>Contact us to get the best cakes!</h1>
+
+    <div [hidden]="hasBeenSubmitted">
+        <form (ngSubmit)="register(ngForm, $event)" #newsletterForm="ngForm" novalidate>
+
+            <div>
+                    <label for="contactname">Name:</label>
+                    <input type="text" id="contactname" name="contactname" [(ngModel)]="model.contactname" required>
+            </div>
+
+            <div>
+                    <label for="contactemail">Email:</label>
+                    <input type="text" id="contactemail" name="contactemail" [(ngModel)]="model.contactemail" required>
+            </div>
+
+            <div>
+                    <label for="contactemail">Message:</label><br>
+                    <input type="text" class="message" id="contactmessage" name="contactmessage" [(ngModel)]="model.contactmessage" required>
+            </div>
+
+            <button type="submit">Send message</button>
+
+            <span>Your name is {{model.contactname}}, and your email is {{model.contactemail}}</span>
+        </form>
+    </div>
+
+    <div [hidden]="!hasBeenSubmitted">You have submitted! Thank you {{model.contactname}}</div>
+
+</div>
+-->

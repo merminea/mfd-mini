@@ -1,0 +1,1558 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+// Variables --------------------------------------------------
+
+// Colors
+
+$primaryBg: #fff;
+$orange: #f45a40;
+$lightorange: #ff674f;
+$footer: #2a2d34;
+$checkout: #ededed;
+$grey: #7e7f84;
+$light: #eeeeee;
+$detail: #c7c7c7;
+$price: #000;
+$tabborder: #cccccc;
+
+// Fonts - main
+$mainText: 'PT Sans', sans-serif;
+$otherText: 'Arial', sans-serif;
+
+//Fonts - main title description
+$navigationSize: 18px;
+
+// Fonts - item name (orange)
+$itemNameSize: 22px;
+
+// Fonts - item description (grey)
+$itemDescriptionSize: 14px;
+
+// Fonts - main title
+$mainTitleSize: 59.3px;
+
+//Fonts - main title description
+$mainTitleDescriptionSize: 14px;
+
+//Fonts - small
+$smallSize: 12px;
+
+//Fonts - $detail
+$detailTitle: 28px;
+$priceBig: 40px;
+$priceSmall: 20px;
+$tabTitle: 24px;
+$productInformation: 16px;
+
+// Mixins --------------------------------------------------
+
+//Flexbox - property
+@mixin flex {
+    display: -webkit-flex;
+    display: flex;
+    list-style: none;
+}
+
+@mixin titles {
+    font-size: $itemNameSize;
+    font-family: $mainText;
+    text-transform: uppercase;
+}
+
+@mixin button {
+    border: none;
+    font-family: $otherText;
+    font-size: $itemDescriptionSize;
+    text-decoration: none;
+    text-transform: uppercase;
+    height: 38px;
+    line-height: 38px;
+}
+
+@mixin icon {
+    height: 15px;
+    width: 20px;
+    padding-right: 5px;
+}
+
+@mixin social-media{
+    background-size: 100%;
+    height: 15px;
+    width: 15px;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+// Stuff --------------------------------------------------
+
+body{
+  margin: 0px;
+  padding: 0px;
+  a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+}
+
+// Header (buttons + icons) --------------------------------------------------
+
+.head-flex{
+  width: 100%;
+  height: 100px;
+  margin: 0 auto;
+  padding: 0px;
+  @include flex;
+  justify-content: space-between;
+  align-items: center;
+        .white {
+          @include button;
+          background-color: $primaryBg;
+          color: $grey;
+          text-align: center;
+          display: inline-block;
+          padding-right: 10px;
+          vertical-align: middle;
+        }
+        .grey {
+          @include button;
+          background-color: $checkout;
+          color: $grey;
+          margin-left: 20px;
+          width: 220px;
+          text-align: center;
+          display: inline-block;
+          vertical-align: middle;
+        }
+
+        .grey:hover {
+        background-color: $footer;
+        }          
+
+        .img{
+           @include icon;
+
+           vertical-align: middle;
+        }
+
+}
+
+// Header (navigation) --------------------------------------------------
+
+.navigation {
+  @include flex;
+  margin: 0; 
+  -webkit-flex-flow: row wrap;
+  justify-content: flex-start;
+  -webkit-padding-start: 7.5%;
+}
+
+.navigation a {
+  text-decoration: none;
+  text-transform: uppercase;
+  display: block;
+  padding: 1em;
+  color: $grey;
+  font-family: $mainText;
+  padding-left: 40px;
+}
+
+.navigation a:hover {
+  color: $orange;
+}
+
+hr.big{
+   border: 3.5px solid $orange;
+   margin: 0px;
+}
+
+
+// Header (big image) --------------------------------------------------
+
+.header-img {
+  margin: 0px auto;
+  width: 100%;
+  background-image: url("../img2.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 660px;
+  margin-bottom: 100px;
+
+    hr.small{
+    border: 2px solid $orange;
+    margin: 0px;
+    padding-top: 2px;
+    }
+
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  @include flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: auto;
+}
+
+main div {
+  width: 36.5%;
+  background: rgba(0,0,0,0.6);
+  color: $primaryBg;
+  padding-left: 7.5%;
+  height: 50%;
+  overflow: auto;
+
+    h2{
+      color: $primaryBg;
+      font-size: $mainTitleSize;
+      font-family: $mainText;
+      margin-top: 25px;
+    }
+
+    h3{
+      color: $primaryBg;
+      font-size: $mainTitleDescriptionSize;
+      font-family: $mainText;
+      margin-top: -40px;
+      margin-right: 20px;
+      line-height: 20px;
+    }
+
+    .shop-button {
+          @include button;
+          background-color: $orange;
+          color: $primaryBg;
+          width: 143px;
+          padding: 0px;
+          margin: 0px;
+          text-align: center;
+          display: inline-block;
+        }
+    .shop-button:hover { 
+        background-color: $footer;
+        }
+}
+
+// Main container for $items - 3 BIG ONE --------------------------------------
+.maincontainer{
+    margin: 0px auto;
+    width: 85%;
+    background: $primaryBg;
+
+    hr{
+        width: 100%;
+        border: 1px solid $light;
+        margin: 0px;
+        }
+}
+
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  @include flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+    h1{
+      @include titles;
+      color: $orange;
+      text-align: left;
+      margin-top: 20px;
+    }
+
+    p
+    {
+      color: $grey;
+      font-size: $itemDescriptionSize;
+      font-family: $otherText;
+      margin: 0px;
+      line-height: 20px;
+    }
+}
+
+// THIS IS JUST THE POPULAR PRODUCT TEXT!!!
+
+.popular-products-flex{
+  padding: 50px 0px;
+  margin: 0;
+  @include flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .popular-title{
+      width: 210px;
+    }
+
+  h1{
+      @include titles;
+      color: $grey;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    hr{
+      width: 155px;
+      border: 1px solid $light;
+    }
+
+}
+
+//END OF TEXT
+
+.item-description {
+  width: 30%;
+}
+
+.flex-item {
+  background-image: url("../img3.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 1.5%;
+  width: 27%;
+  height: 225px;
+}
+
+.flex-product {
+  border: 1px solid $light;
+  padding: 0%;
+  width: 270px;
+  margin-bottom: 30px;
+
+  .flex-product-text-container{
+    width: 80%;
+    margin: 10px 20px;
+    line-height: 20px;
+  }
+
+    h4{
+      color: $grey;
+      font-family: $mainText;
+      font-size: $navigationSize;
+      text-transform: uppercase;
+      margin: 0px;
+    }
+
+    h5{
+      color: $grey;
+      font-family: $otherText;
+      font-size: $smallSize;
+      margin: 0px;
+    }
+
+    hr{
+      border: 1px solid $light;
+    }
+
+    .flex-product-icons{
+      padding: 10px 20px;
+      margin: 0;
+      @include flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: $otherText;
+      font-size: $itemDescriptionSize;
+      color: $orange;
+
+      .img{
+           @include icon;
+        }
+    }
+}
+
+.buy-now-button {
+    @include button;
+    background-color: $orange;
+    color: $primaryBg;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+
+    a:-webkit-any-link {
+    color: $primaryBg;
+    }
+}
+
+.buy-now-button:hover { 
+        background-color: $footer;
+        color: $primaryBg;
+        }
+
+// SIGN UP (ORANGE LINE) --------------------------------------------------
+
+.sign-up-container{
+    width: 100%;
+    height: 100px;
+    background-color: $orange;
+    margin-top: 40px;
+    padding: 0px;
+}
+
+.sign-up-flex{
+      width: 85%;
+      height: 100px;
+      margin: 0 auto;
+      padding: 0px;
+      @include flex;
+      justify-content: space-between;
+      align-items: center;
+
+        h1{
+          @include titles;
+          color: $primaryBg;
+          text-align: center;
+          margin-top: 20px;
+        }
+
+        .sign-up-email {
+          @include button;
+          background-color: $primaryBg;
+          color: $grey;
+          padding-left: 23px;
+          width: 245px;
+          text-align: left;
+          display: inline-block;
+        }
+        .sign-up-button {
+          @include button;
+          background-color: $lightorange;
+          color: $primaryBg;
+          margin-left: 20px;
+          width: 105px;
+          text-align: center;
+          display: inline-block;
+        }
+
+        .sign-up-button:hover { 
+        background-color: $footer;
+        }
+
+    }
+
+
+// Footer --------------------------------------------------
+
+footer{
+    width: 100%;
+    height: 400px;
+    background-color: $footer;
+    margin: 0px;
+    padding: 0px;
+
+      .footer-flex{
+      width: 85%;
+      margin: 0 auto;
+      padding: 0px;
+      @include flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      font-family: $otherText;
+      font-size: $itemDescriptionSize;
+      color: $grey;
+      line-height: 25px;
+      }
+
+
+      h1{
+          @include titles;
+          color: $primaryBg;
+          text-align: left;
+          margin-top: 20px;
+        }
+      p{
+        color: $primaryBg;
+        margin: 0px;
+      }
+
+       a:-webkit-any-link {
+      color: $grey;
+       }
+
+       a:hover{
+        color: $orange;
+       }
+
+       #facebook {
+        background-image: url('../facebook-logo.svg');
+        @include social-media;
+         }
+
+      #facebook:hover {
+        background-image: url('../facebook-logo2.svg');
+      }
+
+       #twitter {
+        background-image: url('../twitter-logo-silhouette.svg');
+        @include social-media;
+         }
+
+      #twitter:hover {
+        background-image: url('../twitter-logo-silhouette2.svg');
+      }
+
+       #google {
+        background-image: url('../google-logo.svg');
+        @include social-media;
+         }
+
+      #google:hover {
+        background-image: url('../google-logo2.svg');
+      }
+
+       #vimeo {
+        background-image: url('../vimeo.svg');
+        @include social-media;
+         }
+
+      #vimeo:hover {
+        background-image: url('../vimeo2.svg');
+      }
+
+       #rss {
+        background-image: url('../rss-symbol.svg');
+        @include social-media;
+         }
+
+      #rss:hover {
+        background-image: url('../rss-symbol2.svg');
+      }
+
+    }
+
+// Detail page --------------------------------------------------
+
+.detail_maincontainer{
+    margin: 0px auto;
+    margin-top: 27px;
+    width: 85%;
+    height: 770px;
+    background: $primaryBg;
+}
+
+.contentbox{
+  width: 48%;
+  height: 600px;
+  display: block;
+  float: left;
+  padding-right: 2%;
+
+  h1{
+    font-size: $detailTitle;
+    font-family: $mainText;
+    color: $grey;
+  }
+}
+
+.contentbox2{
+  width: 48%;
+  height: 600px;
+  display: block;
+  float: left;
+  padding-right: 2%;
+
+  h1{
+    font-size: $detailTitle;
+    font-family: $mainText;
+    color: $grey;
+  }
+}
+
+// Detail images --------------------------------------------------
+
+.content-images-flex{
+      width: 100%;
+      height: 175px;
+      margin: 0 auto;
+      padding: 0px;
+      padding-top: 30px;
+      @include flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+
+        .content-flex-item {
+        width: 175px;
+        height: 175px;
+        border: 1px solid $detail;
+        overflow:hidden;
+        }
+
+        .content-flex-item:hover {
+        border: 1px solid $orange;
+        }
+}
+
+// Detail info --------------------------------------------------
+
+.price-flex{
+      width: 100%;
+      margin: 0 auto;
+      padding: 0px;
+      @include flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+
+      .content-price-flex {
+        font-family: $otherText;
+        font-size: $priceSmall;
+        color: $grey;
+        text-align: right;
+        margin-bottom: 15px;
+
+          h1{
+            font-size: $priceBig;
+            color: $price;
+          }
+
+          .size-button {
+          height: 50px;
+          line-height: 50px;
+          border: 1px solid $grey;
+          font-family: $otherText;
+          font-size: $priceSmall;
+          color: $grey;
+          width: 400px;
+          padding-left: 20px;
+          margin: 0px;
+          text-align: left;
+          display: inline-block;
+        }
+
+        .size-button:hover {
+          background: $light;
+        }
+
+          .amount-button {
+          height: 50px;
+          line-height: 50px;
+          border: 1px solid $grey;
+          font-family: $otherText;
+          font-size: $priceSmall;
+          color: $grey;
+          width: 100px;
+          padding: 0px;
+          margin: 0px;
+          text-align: center;
+          display: inline-block;
+        }
+
+        .amount-button:hover {
+          background: $light;
+        }
+        }
+}
+
+         .shop-now-button {
+          height: 55px;
+          line-height: 55px;
+          font-family: $otherText;
+          font-size: $detailTitle;
+          background: $orange;
+          color: $primaryBg;
+          width: 275px;
+          margin-top: 40px;
+          text-align: center;
+          display: block;
+          float: right;
+        }
+
+         .shop-now-button:hover {
+          background: $footer;
+        }
+
+// Detail actual text!! tabs --------------------------------------------------
+
+  .tabs {
+      position: relative;   
+      min-height: 500px;
+      clear: both;
+      margin: 25px 0;
+    }
+    .tab {
+      float: left;
+    }
+    .tab label {
+      background: $light; 
+      width: 190px;
+      padding: 30px; 
+      border: 1px solid $tabborder;
+      border-radius: 15px 15px 0px 0px; 
+      margin-left: -1px; 
+      margin-right: 10px;
+      position: relative;
+      left: 1px; 
+      font-size: $tabTitle;
+      font-family: $otherText;
+      color: $grey;
+    }
+    .tab [type=radio] {
+      display: none;   
+    }
+    .content {
+      width: 100%;
+      font-family: $otherText;
+      color: $grey;
+      font-size: $productInformation;
+      position: absolute;
+      top: 57px;
+      left: 0;
+      background: $primaryBg;
+      right: 0;
+      bottom: 0;
+      padding: 20px;
+      border-top: 1px solid #ccc; 
+      column-count: 2;
+      column-gap: 40px;
+
+    }
+    [type=radio]:checked ~ label {
+      background: $primaryBg;
+      border-bottom: 1px solid $primaryBg;
+      border-top: 10px solid $orange;
+      z-index: 2;
+    }
+    [type=radio]:checked ~ label ~ .content {
+      z-index: 1;
+    }
+
+// Contact --------------------------------------------------
+
+.detail-maincontainer{
+    margin: 0px auto;
+    margin-top: 27px;
+    width: 85%;
+    height: 770px;
+    background: $primaryBg;
+    text-transform: uppercase;
+    color: $grey;
+    font-family: $otherText;
+    font-size: $itemDescriptionSize;
+
+      h1{
+        font-size: $detailTitle;
+        color: $grey;
+        font-family: $mainText;
+        margin-bottom: 20px;
+      }
+
+      label{
+            height: 35px;
+            line-height: 35px;
+            font-family: $otherText;
+            font-size: $itemDescriptionSize;
+            text-transform: uppercase;
+            color: $grey;
+            width: 60px;
+            margin-right: 40px;
+            text-align: left;
+            display: inline-block;
+            margin-bottom: 15px;
+      }
+
+      input{
+            height: 35px;
+            line-height: 35px;
+            border: 1px solid $grey;
+            font-family: $otherText;
+            font-size: $itemDescriptionSize;
+            text-transform: uppercase;
+            color: $grey;
+            width: 370px;
+            padding-left: 8px;
+            text-align: left;
+            display: inline-block;
+            margin-bottom: 15px;
+
+            ng-pristine{
+              background-color: lightyellow;
+            }
+
+            ng-touched.ng-invalid{
+              background-color: lightpink;
+            }
+
+            ng-touched.ng-valid{
+              background-color: lightgreen;
+            }
+      }
+
+      .message{
+            height: 110px;
+            border: 1px solid $grey;
+            font-family: $otherText;
+            font-size: $itemDescriptionSize;
+            text-transform: uppercase;
+            color: $grey;
+            width: 475px;
+            padding-left: 8px;
+            text-align: left;
+            display: inline-block;
+            margin-bottom: 15px;
+            }
+
+
+      button {
+          @include button;
+          background-color: $orange;
+          color: $primaryBg;
+          width: 140px;
+          text-align: center;
+          display: inline-block;
+        }
+
+        button:hover { 
+        background-color: $footer;
+        }
+
+}
+
+
+@media only screen and (max-width: 1366px) {
+
+  // Footer --------------------------------------------------
+
+}
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+
+
+  .contentbox{
+  width: 100%;
+  height: 400px;
+  display: block;
+  float: left;
+  }
+
+  .contentbox2{
+  width: 100%;
+  height: 450px;
+  display: block;
+  float: left;
+  }
+
+  .content-images-flex{
+      width: 100%;
+      height: 175px;
+      margin: 0 auto;
+      padding: 0px;
+      padding-top: 0px;
+      @include flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: row;
+
+        .content-flex-item {
+        width: 175px;
+        height: 100px;
+        border: 1px solid $detail;
+        overflow:hidden;
+        }
+
+        .content-flex-item:hover {
+        border: 1px solid $orange;
+        }
+    }
+
+
+    // Detail info --------------------------------------------------
+
+.price-flex{
+      width: 100%;
+      margin: 0 auto;
+      padding: 0px;
+      @include flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+
+      .content-price-flex {
+        font-family: $otherText;
+        font-size: $priceSmall;
+        color: $grey;
+        text-align: right;
+        margin-bottom: 15px;
+
+          h1{
+            font-size: $priceSmall;
+            color: $price;
+          }
+
+          .size-button {
+          height: 50px;
+          line-height: 50px;
+          border: 1px solid $grey;
+          font-family: $otherText;
+          font-size: $priceSmall;
+          color: $grey;
+          width: 150px;
+          padding-left: 20px;
+          margin: 0px;
+          text-align: left;
+          display: inline-block;
+        }
+
+        .size-button:hover {
+          background: $light;
+        }
+
+          .amount-button {
+          height: 50px;
+          line-height: 50px;
+          border: 1px solid $grey;
+          font-family: $otherText;
+          font-size: $priceSmall;
+          color: $grey;
+          width: 100px;
+          padding: 0px;
+          margin: 0px;
+          text-align: center;
+          display: inline-block;
+        }
+
+        .amount-button:hover {
+          background: $light;
+        }
+        }
+}
+
+         .shop-now-button {
+          height: 55px;
+          line-height: 55px;
+          font-family: $otherText;
+          font-size: $detailTitle;
+          background: $orange;
+          color: $primaryBg;
+          width: 100%;
+          margin: 0 auto;
+          margin-top: 40px;
+          text-align: center;
+          
+        }
+
+         .shop-now-button:hover {
+          background: $footer;
+        }
+
+
+    // Detail actual text!! tabs --------------------------------------------------
+    .detail_maincontainer{
+    margin: 0px auto;
+    width: 85%;
+    height: 700px;
+    background: $primaryBg;
+}
+
+
+  .tabs {
+      position: relative;   
+      min-height: 500px;
+      clear: both;
+      margin: 25px 0;
+    }
+    .tab {
+      float: left;
+    }
+    .tab label {
+      background: $light; 
+      width: 100px;
+      padding: 10px; 
+      border: 1px solid $tabborder;
+      border-radius: 15px 15px 0px 0px; 
+      margin-left: -1px; 
+      margin-right: 10px;
+      position: relative;
+      left: 1px; 
+      font-size: $productInformation;
+      font-family: $otherText;
+      color: $grey;
+    }
+    .tab [type=radio] {
+      display: none;   
+    }
+    .content {
+      width: 100%;
+      font-family: $otherText;
+      color: $grey;
+      font-size: $smallSize;
+      position: absolute;
+      top: 26px;
+      left: 0;
+      background: $primaryBg;
+      right: 0;
+      bottom: 0;
+      padding: 0px;
+      padding-top: 20px;
+      border-top: 1px solid #ccc; 
+      column-count: 1;
+      column-gap: 0px;
+
+    }
+    [type=radio]:checked ~ label {
+      background: $primaryBg;
+      border-bottom: 1px solid $primaryBg;
+      border-top: 10px solid $orange;
+      z-index: 2;
+    }
+    [type=radio]:checked ~ label ~ .content {
+      z-index: 1;
+    }
+
+
+    // SIGN UP (ORANGE LINE) --------------------------------------------------
+
+.sign-up-container{
+    width: 100%;
+    height: 250px;
+    background-color: $orange;
+    margin-top: 40px;
+    padding: 0px;
+}
+
+.sign-up-flex{
+      width: 85%;
+      height: 250px;
+      margin: 0 auto;
+      padding: 0px;
+      @include flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+        h1{
+          @include titles;
+          color: $primaryBg;
+          text-align: center;
+          margin-top: 20px;
+        }
+
+        .sign-up-email {
+          @include button;
+          background-color: $primaryBg;
+          color: $grey;
+          padding-left: 20px;
+          width: 245px;
+          text-align: center;
+          display: flex;
+        }
+        .sign-up-button {
+          @include button;
+          background-color: $lightorange;
+          color: $primaryBg;
+          padding-left: 20px;
+          margin-left: 0px;
+          width: 245px;
+          text-align: center;
+          display: flex;
+        }
+
+        .sign-up-button:hover { 
+        background-color: $footer;
+        }
+
+    }
+
+
+// Footer --------------------------------------------------
+
+footer{
+    width: 100%;
+    height: 1300px;
+    background-color: $footer;
+    margin: 0px;
+    padding: 0px;
+
+      .footer-flex{
+      width: 85%;
+      margin: 0 auto;
+      padding: 0px;
+      @include flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      font-family: $otherText;
+      font-size: $itemDescriptionSize;
+      color: $grey;
+      line-height: 25px;
+      flex-direction: column;
+      }
+
+
+      h1{
+          @include titles;
+          color: $primaryBg;
+          text-align: left;
+          margin-top: 20px;
+        }
+      p{
+        color: $primaryBg;
+        margin: 0px;
+      }
+
+       a:-webkit-any-link {
+      color: $grey;
+       }
+
+       a:hover{
+        color: $orange;
+       }
+
+       #facebook {
+        background-image: url('../facebook-logo.svg');
+        @include social-media;
+         }
+
+      #facebook:hover {
+        background-image: url('../facebook-logo2.svg');
+      }
+
+       #twitter {
+        background-image: url('../twitter-logo-silhouette.svg');
+        @include social-media;
+         }
+
+      #twitter:hover {
+        background-image: url('../twitter-logo-silhouette2.svg');
+      }
+
+       #google {
+        background-image: url('../google-logo.svg');
+        @include social-media;
+         }
+
+      #google:hover {
+        background-image: url('../google-logo2.svg');
+      }
+
+       #vimeo {
+        background-image: url('../vimeo.svg');
+        @include social-media;
+         }
+
+      #vimeo:hover {
+        background-image: url('../vimeo2.svg');
+      }
+
+       #rss {
+        background-image: url('../rss-symbol.svg');
+        @include social-media;
+         }
+
+      #rss:hover {
+        background-image: url('../rss-symbol2.svg');
+      }
+
+    }
+
+
+    // Header (buttons + icons) --------------------------------------------------
+
+    .head-flex{
+      width: 100%;
+      height: 150px;
+      margin: 0 auto;
+      padding: 0px;
+      padding-top: 50px;
+      @include flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+
+
+        .white {
+          @include button;
+          background-color: $primaryBg;
+          color: $grey;
+          text-align: center;
+          display: inline-block;
+          padding-right: 10px;
+          vertical-align: middle;
+        }
+        .grey {
+          @include button;
+          background-color: $checkout;
+          color: $grey;
+          margin: 0px;
+          width: 100%;
+          text-align: center;
+          display: inline-block;
+          vertical-align: middle;
+        }
+
+        .grey:hover {
+        background-color: $footer;
+        }          
+
+        .img{
+           @include icon;
+
+           vertical-align: middle;
+        }
+
+    }
+
+    // Header (navigation) --------------------------------------------------
+
+    .navigation {
+      @include flex;
+      width: 100%;
+      margin: 0; 
+      padding-top: 15px;
+      padding-bottom: 15px;
+      -webkit-flex-flow: row wrap;
+      justify-content: center;
+      -webkit-padding-start: 0%;
+      flex-direction: row;
+    }
+
+    .navigation a {
+      text-decoration: none;
+      text-transform: uppercase;
+      display: block;
+      padding: 1em;
+      color: $grey;
+      font-family: $mainText;
+      padding-left: 0px;
+      text-align: center;
+    }
+
+    .navigation a:hover {
+      color: $orange;
+    }
+
+    hr.big{
+      border: 3.5px solid $orange;
+      margin: 0px;
+    }
+
+    // Contact --------------------------------------------------
+
+.detail-maincontainer{
+    margin: 0px auto;
+    margin-top: 27px;
+    width: 85%;
+    height: 770px;
+    background: $primaryBg;
+    text-transform: uppercase;
+    color: $grey;
+    font-family: $otherText;
+    font-size: $itemDescriptionSize;
+
+      h1{
+        font-size: $detailTitle;
+        color: $grey;
+        font-family: $mainText;
+        margin-bottom: 20px;
+      }
+
+      label{
+            height: 35px;
+            line-height: 35px;
+            font-family: $otherText;
+            font-size: $itemDescriptionSize;
+            text-transform: uppercase;
+            color: $grey;
+            width: 60px;
+            margin-right: 40px;
+            text-align: left;
+            display: inline-block;
+            margin-bottom: 15px;
+      }
+
+      input{
+            height: 35px;
+            line-height: 35px;
+            border: 1px solid $grey;
+            font-family: $otherText;
+            font-size: $itemDescriptionSize;
+            text-transform: uppercase;
+            color: $grey;
+            width: 300px;
+            padding-left: 8px;
+            text-align: left;
+            display: inline-block;
+            margin-bottom: 15px;
+
+            ng-pristine{
+              background-color: lightyellow;
+            }
+
+            ng-touched.ng-invalid{
+              background-color: lightpink;
+            }
+
+            ng-touched.ng-valid{
+              background-color: lightgreen;
+            }
+      }
+
+      .message{
+            height: 110px;
+            border: 1px solid $grey;
+            font-family: $otherText;
+            font-size: $itemDescriptionSize;
+            text-transform: uppercase;
+            color: $grey;
+            width: 300px;
+            padding-left: 8px;
+            text-align: left;
+            display: inline-block;
+            margin-bottom: 15px;
+            }
+
+
+      button {
+          @include button;
+          background-color: $orange;
+          color: $primaryBg;
+          width: 100%;
+          text-align: center;
+          display: inline-block;
+        }
+
+        button:hover { 
+        background-color: $footer;
+        }
+
+}
+
+
+// Header (big image) --------------------------------------------------
+
+.header-img {
+  margin: 0px auto;
+  width: 100%;
+  background-image: url("../img2.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 200px;
+  margin-bottom: 100px;
+
+    hr.small{
+    border: 2px solid $orange;
+    margin: 0px;
+    padding-top: 2px;
+    display: none;
+    }
+
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  @include flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: auto;
+}
+
+main div {
+  width: 50%;
+  background: rgba(0,0,0,0.6);
+  color: $primaryBg;
+  padding-left: 7.5%;
+  height: 80%;
+  overflow: auto;
+
+    h2{
+      color: $primaryBg;
+      font-size: $detailTitle;
+      font-family: $mainText;
+      margin-top: 25px;
+      margin-bottom: 5px;
+    }
+
+    h3{
+      color: $primaryBg;
+      font-size: $smallSize;
+      font-family: $mainText;
+      margin-top: -40px;
+      line-height: 20px;
+      display:none;
+    }
+
+    .shop-button {
+          @include button;
+          background-color: $orange;
+          color: $primaryBg;
+          width: 100px;
+          padding: 0px;
+          margin: 0px;
+          text-align: center;
+          display: inline-block;
+        }
+    .shop-button:hover { 
+        background-color: $footer;
+        }
+}
+
+// Main container for $items - 3 BIG ONE --------------------------------------
+.maincontainer{
+    margin: 0px auto;
+    width: 85%;
+    background: $primaryBg;
+
+    hr{
+        width: 100%;
+        border: 1px solid $light;
+        margin: 0px;
+        }
+}
+
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  @include flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+    h1{
+      @include titles;
+      color: $orange;
+      text-align: left;
+      margin-top: 20px;
+    }
+
+    p
+    {
+      color: $grey;
+      font-size: $itemDescriptionSize;
+      font-family: $otherText;
+      margin: 0px;
+      line-height: 20px;
+    }
+}
+
+// THIS IS JUST THE POPULAR PRODUCT TEXT!!!
+
+.popular-products-flex{
+  padding: 50px 0px;
+  margin: 0;
+  @include flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .popular-title{
+      width: 100px;
+    }
+
+  h1{
+      @include titles;
+      color: $grey;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    hr{
+      width: 20px;
+      border: 1px solid $light;
+      margin: 0px auto;
+    }
+
+}
+
+//END OF TEXT
+
+.item-description {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+/*.flex-item {
+  background-image: url("../img3.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 1.5%;
+  width: 27%;
+  height: 150px;
+}*/
+
+.flex-product {
+  border: 1px solid $light;
+  padding: 0%;
+  width: 270px;
+  margin-bottom: 30px;
+
+  .flex-product-text-container{
+    width: 80%;
+    margin: 10px 20px;
+    line-height: 20px;
+  }
+
+    h4{
+      color: $grey;
+      font-family: $mainText;
+      font-size: $navigationSize;
+      text-transform: uppercase;
+      margin: 0px;
+    }
+
+    h5{
+      color: $grey;
+      font-family: $otherText;
+      font-size: $smallSize;
+      margin: 0px;
+    }
+
+    hr{
+      border: 1px solid $light;
+    }
+
+    .flex-product-icons{
+      padding: 10px 20px;
+      margin: 0;
+      @include flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: $otherText;
+      font-size: $itemDescriptionSize;
+      color: $orange;
+
+      .img{
+           @include icon;
+        }
+    }
+}
+
+.buy-now-button {
+    @include button;
+    background-color: $orange;
+    color: $primaryBg;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+
+    a:-webkit-any-link {
+    color: $primaryBg;
+    }
+}
+
+.buy-now-button:hover { 
+        background-color: $footer;
+        color: $primaryBg;
+        }
+
+
+}

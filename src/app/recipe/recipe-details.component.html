@@ -1,0 +1,85 @@
+<div class="detail_maincontainer">
+
+    <div class="contentbox">
+        <img [src]="recipe.image" alt="This image shows {{recipe.name}}" width="100%">
+        <ul class="content-images-flex">
+            <li class="content-flex-item"><img [src]="recipe.image" alt="This image shows {{recipe.name}}" height="175px"></li>
+            <li class="content-flex-item"><img [src]="recipe.image" alt="This image shows {{recipe.name}}" height="175px"></li>
+            <li class="content-flex-item"><img [src]="recipe.image" alt="This image shows {{recipe.name}}" height="175px"></li>
+        </ul>
+
+    </div>
+    <div class="contentbox2">
+            <div *ngIf="recipe">
+            <h1>{{recipe.name | uppercase}}</h1>
+
+            <ul class="price-flex">
+                <li class="content-price-flex">
+                    <img class="img" src="app/assets/images/bio-fuel.svg" alt="heart" height="50px">
+                    <img class="img" src="app/assets/images/gluten.svg" alt="plus" height="50px"></li>
+                <li class="content-price-flex">
+                    <h1>{{recipe.cost | currency:'DKK':true}}</h1>
+                    <s>{{recipe.cost | currency:'DKK':true}}</s><br>
+                    You save 15%
+                </li>
+            </ul>
+
+
+            <ul class="price-flex">
+                <li class="content-price-flex">
+                    Size
+                </li>
+                <li class="content-price-flex">
+                    Amount
+                </li>
+            </ul>
+
+            <ul class="price-flex">
+                <li class="content-price-flex">
+                    <div class="size-button">38 cm</div>
+                </li>
+                <li class="content-price-flex">
+                    <div class="amount-button">1</div><br>
+                </li>
+            </ul>
+            <div class="shop-now-button">Shop now!</div>
+        </div>
+
+    </div>
+
+    
+</div>
+
+<div class="detail_maincontainer">
+
+    <div class="tabs">
+            
+        <div class="tab">
+            <input type="radio" id="tab-1" name="tab-group-1" checked>
+            <label for="tab-1">Description</label>
+            
+            <div class="content">
+                {{recipe.detail}}
+            </div> 
+        </div>
+            
+        <div class="tab">
+            <input type="radio" id="tab-2" name="tab-group-1">
+            <label for="tab-2">Shipping</label>
+            
+            <div class="content">
+                <p>{{recipe.price}}</p>
+            </div> 
+        </div>
+            
+            <div class="tab">
+            <input type="radio" id="tab-3" name="tab-group-1">
+            <label for="tab-3">Sizing</label>
+            
+            <div class="content">
+                <p>{{recipe.sizing}}</p>
+            </div> 
+        </div>
+            
+        </div>
+</div>
